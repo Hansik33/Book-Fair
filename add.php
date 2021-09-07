@@ -1,3 +1,6 @@
+<?php
+include 'php/add_data.php';
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -22,40 +25,42 @@
                         <a class="nav-link py-3 px-lg-3" href="view.php">KIERMASZ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link py-3 px-lg-3 active" href="add.php">DODAJ KSIĄŻKĘ</a>
+                        <a class="nav-link py-3 px-lg-3 active" href="add.php">DODAJ</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav> 
     <main>
-        <div class="container container-content bg-white rounded p-5 mt-5">
+        <div class="container container-content bg-white rounded p-5">
             <h1 class="text-center mb-5">Dodaj książkę</h1>
         <form action="" method="post">
             <div class="row mb-5">
                 <div class="col-6">
-                <input type="text" class="form-control" placeholder="Imię" minlength="3" required onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)">
+                <input id="first_name" name="first_name" type="text" class="form-control" placeholder="Imię" minlength="3" maxlength="15"  
+                required onkeypress="return /[AaĄąBbCcĆćDdEeĘęFfGgHhIiJjKkLlŁłMmNnŃńOoÓóPpRrSsŚśTtUuWwYyZzŹźŻż]/i.test(event.key)">
                 </div>
                 <div class="col-6">
-                <input type="text" class="form-control" placeholder="Nazwisko" minlength="3" required onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)">
+                <input id="last_name" name="last_name" type="text" class="form-control" placeholder="Nazwisko" minlength="3" maxlength="30" 
+                required onkeypress="return /[AaĄąBbCcĆćDdEeĘęFfGgHhIiJjKkLlŁłMmNnŃńOoÓóPpRrSsŚśTtUuWwYyZzŹźŻż]/i.test(event.key)">
                 </div>
             </div>
             <div class="row mb-5">
                 <div class="col-6">
-                <input type="tel" class="form-control" pattern="[0-9]{3}[0-9]{3}[0-9]{3}" placeholder="Numer telefonu" required>
+                <input id="tel" name="tel" type="tel" class="form-control" 
+                pattern="[0-9]{3}[0-9]{3}[0-9]{3}" placeholder="Numer telefonu" required>
                 </div>
                 <div class="col-6">
-                <input type="number" class="form-control" min="0" placeholder="Cena" required>
+                <input id="price" name="price" type="number" class="form-control" min="0" max="500" placeholder="Cena (zł)" required>
                 </div>
             </div>
-            <textarea class="form-control" placeholder="Opis książki" minlength="10" required></textarea>
+            <textarea id="description_book" name="description_book" class="form-control" placeholder="Opis książki" minlength="10" maxlength="200" required></textarea>
             <div class="d-flex">
-            <button id="button" name="button" class="btn btn-lg btn-success p-4 mt-5 mx-auto" type="submit">Dodaj książkę</button>
+            <button id="button" name="button" class="btn btn-lg btn-success p-3 mt-3 mx-auto" type="submit">Dodaj</button>
             </div>
         </form>
         </div>
     </main>
-    <script src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" 
     crossorigin="anonymous"></script>

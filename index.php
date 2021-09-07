@@ -18,7 +18,6 @@ include 'php/login.php';
         <form action="" method="post">
         <div class="row">
             <div class="h-100 d-flex flex-column justify-content-center align-items-center">
-                
                 <label class="form-label text-white h1" for="password">Podaj hasło:</label>
                 <div class="col-6">
                 <input id="password" name="password" class="form-control form-control-lg text-center mt-2 mb-3" type="password">
@@ -28,7 +27,6 @@ include 'php/login.php';
         </div>
         </form>
     </div>
-    <script src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" 
     crossorigin="anonymous"></script>

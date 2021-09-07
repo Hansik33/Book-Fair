@@ -30,5 +30,6 @@ if (isset($_POST['button']))
         </div>
         ';
     }
+    $connect->close();
 }
 ?>

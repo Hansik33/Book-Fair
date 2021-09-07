@@ -22,13 +22,17 @@
                         <a class="nav-link py-3 px-lg-3 active" href="view.php">KIERMASZ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link py-3 px-lg-3" href="add.php">DODAJ KSIĄŻKĘ</a>
+                        <a class="nav-link py-3 px-lg-3" href="add.php">DODAJ</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <script src="js/main.js"></script>
+    <main>
+        <div class="container mt-5">
+          <?php include 'php/view_data.php'; ?>
+        </div>
+    </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" 
     crossorigin="anonymous"></script>
