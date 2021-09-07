@@ -13,20 +13,22 @@ include 'php/login.php';
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container">
-        <img src="png/logo_light.png" class="img-fluid mx-auto d-block logo pb-5 pt-5" alt="logo">
+    <div class="container container-content">
+        <img src="png/logo_light.png" class="img-fluid logo mb-5 mt-5 mx-auto d-block" alt="logo">
         <form action="" method="post">
-            <div class="form-group d-flex flex-column justify-content-center align-items-center">
-                <label class="h1 text-light" for="password">Podaj hasło:</label>
-                <input id="password" name="password" class="form-control text-center mt-2 mb-3" type="password">
+        <div class="row">
+            <div class="h-100 d-flex flex-column justify-content-center align-items-center">
+                
+                <label class="form-label text-white h1" for="password">Podaj hasło:</label>
+                <div class="col-6">
+                <input id="password" name="password" class="form-control form-control-lg text-center mt-2 mb-3" type="password">
+                </div>
                 <button id="button" name="button" class="btn btn-lg btn-success p-3 mb-5" type="submit">Wprowadź</button>
             </div>
+        </div>
         </form>
     </div>
     <script src="js/main.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
-    crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" 
     crossorigin="anonymous"></script>
