@@ -10,7 +10,7 @@
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
 <body>
-   <nav class="navbar navbar-expand-sm navbar-light bg-white text-uppercase fixed-top">
+   <nav class="navbar navbar-expand-sm navbar-light bg-white text-uppercase fixed-top" style="z-index: 1;">
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
