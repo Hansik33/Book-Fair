@@ -9,11 +9,21 @@ $result = $connect->query("SELECT COUNT(*) FROM books_data");
 
 while ($row = $result->fetch_assoc())  $quantity =  $row['COUNT(*)'];
 
+$result = $connect->query(
+    "SELECT COUNT(books_data.is_confirmed) FROM books_data 
+WHERE books_data.is_confirmed = '1'"
+);
+
+while ($row = $result->fetch_assoc())  $quantity_confirmed =  $row['COUNT(books_data.is_confirmed)'];
+
+if ($quantity_confirmed % 2 == 0) $is_even = true;
+else $is_even = false;
+
 $result = $connect->query("SELECT books_data.id FROM books_data ORDER BY books_data.id DESC LIMIT 1");
 
 while ($row = $result->fetch_assoc())  $largest_id =  $row['id'];
 
-$counter = 1;
+$counter = 0;
 
 for ($i = 1; $i <= $quantity; $i++)
 {
@@ -34,10 +44,14 @@ for ($i = 1; $i <= $quantity; $i++)
         $is_confirmed = $row['is_confirmed'];
     }
 
-    if ($counter == 1) echo '<div class="row">';
-
     if ($is_confirmed)
     {
+
+    if ($counter == 0) echo '
+    <div class="row">
+    ';
+
+    $counter++;
 
     echo '
            <div class="col-lg-6 col-md-12 mt-5 text-center">
@@ -55,18 +69,23 @@ for ($i = 1; $i <= $quantity; $i++)
            </div>
     ';
 
-    $counter++;
+    if ($counter == 2)
+    {
+        echo '
+        </div>
+        ';
+        $counter = 0;
+    }
     
     }
 
     $largest_id--;
-
-    if ($counter == 3)
-    {
-        $counter = 1;
-        echo '</div>';
-    }
 }
+
+if ($is_even == false) 
+echo '
+        </div>
+        ';
 
 $connect->close();
 
